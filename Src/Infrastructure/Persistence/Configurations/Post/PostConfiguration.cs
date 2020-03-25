@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Persistence.Configurations.Post
 {
-    public sealed class PostConfiguration : EntityConfiguration<Domain.Post>
+    public sealed class PostConfiguration : EntityConfiguration<Domain.Entities.Post>
     {
-        public override void Configure(EntityTypeBuilder<Domain.Post> builder)
+        public override void Configure(EntityTypeBuilder<Domain.Entities.Post> builder)
         {
             builder?.Property(p => p.Subject)
                 .IsRequired()

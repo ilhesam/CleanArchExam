@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Domain;
+using Domain.Entities;
 using Infrastructure.Persistence.Configurations.Post;
 using Microsoft.EntityFrameworkCore;
 

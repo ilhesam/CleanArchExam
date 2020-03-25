@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Domain.Common;
 
-namespace Domain
+namespace Domain.Entities
 {
     public class Post : Entity
     {
