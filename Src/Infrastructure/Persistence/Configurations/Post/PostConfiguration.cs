@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Persistence.Configurations.Post
 {
-    public class PostConfiguration : EntityConfiguration<Domain.Post>
+    public sealed class PostConfiguration : EntityConfiguration<Domain.Post>
     {
         public override void Configure(EntityTypeBuilder<Domain.Post> builder)
         {
