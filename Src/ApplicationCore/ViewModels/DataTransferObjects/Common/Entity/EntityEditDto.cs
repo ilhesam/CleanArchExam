@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ApplicationCore.ViewModels.DataTransferObjects.Common.Entity
+namespace ApplicationCore.ViewModels.DataTransferObjects.Common
 {
     public class EntityEditDto
     {
