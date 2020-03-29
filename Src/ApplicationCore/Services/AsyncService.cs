@@ -12,8 +12,8 @@ namespace ApplicationCore.Services
 {
     public abstract class AsyncService<TEntity, TEntityAddDto, TEntityEditDto, TEntityGetDto> : IAsyncService<TEntityAddDto, TEntityEditDto, TEntityGetDto> where TEntity : Entity where TEntityAddDto : EntityAddDto where TEntityEditDto : EntityEditDto where TEntityGetDto : EntityGetDto
     {
-        protected IAsyncRepository<TEntity> Repository;
-        protected IMapper Mapper;
+        protected readonly IAsyncRepository<TEntity> Repository;
+        protected readonly IMapper Mapper;
 
         protected AsyncService(IAsyncRepository<TEntity> repository, IMapper mapper)
         {
