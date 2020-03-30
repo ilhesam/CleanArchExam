@@ -23,9 +23,9 @@ namespace ApplicationCore.Services
             Mapper = mapper;
         }
 
-        public async Task<List<TEntityGetDto>> ListAllAsync() => await GetAll().ToListAsync();
+        public virtual async Task<List<TEntityGetDto>> ListAllAsync() => await GetAll().ToListAsync();
 
-        public IQueryable<TEntityGetDto> GetAll() => Repository.GetAll()
+        public virtual IQueryable<TEntityGetDto> GetAll() => Repository.GetAll()
                 .Select(e => Mapper.Map<TEntity, TEntityGetDto>(e));
 
         public virtual async Task<TEntityGetDto> GetByIdAsync(int id)

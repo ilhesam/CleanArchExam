@@ -21,9 +21,9 @@ namespace Infrastructure.Repositories
             DbSet = Db.Set<TEntity>();
         }
 
-        public IQueryable<TEntity> GetAll() => DbSet.AsNoTracking();
+        public virtual IQueryable<TEntity> GetAll() => DbSet.AsNoTracking();
 
-        public async Task<TEntity> GetByIdAsync(int id) => await DbSet.FindAsync(id);
+        public virtual async Task<TEntity> GetByIdAsync(int id) => await DbSet.FindAsync(id);
 
         public virtual async Task<TEntity> AddAsync(TEntity entity)
         {
