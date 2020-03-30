@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Common;
@@ -20,15 +21,9 @@ namespace Infrastructure.Repositories
             DbSet = Db.Set<TEntity>();
         }
 
-        public virtual async Task<IEnumerable<TEntity>> ListAllAsync()
-        {
-            return await DbSet.ToListAsync();
-        }
+        public IQueryable<TEntity> GetAll() => DbSet.AsNoTracking();
 
-        public virtual async Task<TEntity> GetById(int id)
-        {
-            return await DbSet.FindAsync(id);
-        }
+        public async Task<TEntity> GetByIdAsync(int id) => await DbSet.FindAsync(id);
 
         public virtual async Task<TEntity> AddAsync(TEntity entity)
         {
@@ -52,7 +47,7 @@ namespace Infrastructure.Repositories
 
         public virtual async Task DeleteAsync(int id)
         {
-            var entity = await GetById(id);
+            var entity = await GetByIdAsync(id);
             await DeleteAsync(entity);
         }
     }
