@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Src\Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Src\Web\Web.csproj", "{6893BC5D-3AAE-46D7-828E-D8D79156E0B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{F98533BD-5A9A-4CB2-B5D5-FD29ECEB9789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{6893BC5D-3AAE-46D7-828E-D8D79156E0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6893BC5D-3AAE-46D7-828E-D8D79156E0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6893BC5D-3AAE-46D7-828E-D8D79156E0B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F98533BD-5A9A-4CB2-B5D5-FD29ECEB9789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F98533BD-5A9A-4CB2-B5D5-FD29ECEB9789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F98533BD-5A9A-4CB2-B5D5-FD29ECEB9789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F98533BD-5A9A-4CB2-B5D5-FD29ECEB9789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{40A83299-6B4A-4CD6-B344-2CB5114A51FF} = {EBB7670C-E001-468B-8AC5-0B7A9109C9CD}
 		{B2AB6BB2-CF01-4F45-893D-F33F6FC07CC5} = {EBB7670C-E001-468B-8AC5-0B7A9109C9CD}
 		{6893BC5D-3AAE-46D7-828E-D8D79156E0B4} = {EBB7670C-E001-468B-8AC5-0B7A9109C9CD}
+		{F98533BD-5A9A-4CB2-B5D5-FD29ECEB9789} = {EBB7670C-E001-468B-8AC5-0B7A9109C9CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB5461B6-B660-4AFE-AEA3-DEE898636ACC}

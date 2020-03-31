@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure
 {
-    public static class DependencyInjection
+    public static class DependencyContainer
     {
         public static IServiceCollection AddInfrastructure<TStartup>(this IServiceCollection services, IConfiguration configuration)
         {
