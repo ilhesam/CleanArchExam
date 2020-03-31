@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{EBB7670C-E001-468B-8AC5-0B7A9109C9CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Src\Domain\Domain.csproj", "{D4BE68ED-EA7B-461A-9AA9-6F1A7AAE4F34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Src\Domain\Domain.csproj", "{D4BE68ED-EA7B-461A-9AA9-6F1A7AAE4F34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCore", "Src\ApplicationCore\ApplicationCore.csproj", "{40A83299-6B4A-4CD6-B344-2CB5114A51FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "Src\ApplicationCore\ApplicationCore.csproj", "{40A83299-6B4A-4CD6-B344-2CB5114A51FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Src\Infrastructure\Infrastructure.csproj", "{B2AB6BB2-CF01-4F45-893D-F33F6FC07CC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Src\Infrastructure\Infrastructure.csproj", "{B2AB6BB2-CF01-4F45-893D-F33F6FC07CC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Src\Web\Web.csproj", "{6893BC5D-3AAE-46D7-828E-D8D79156E0B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Src\Web\Web.csproj", "{6893BC5D-3AAE-46D7-828E-D8D79156E0B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
