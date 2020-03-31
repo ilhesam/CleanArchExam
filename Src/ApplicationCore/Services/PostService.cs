@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ApplicationCore.Interfaces;
-using ApplicationCore.ViewModels.DataTransferObjects.Entities;
+using ApplicationCore.ViewModels.DataTransferObjects;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Interfaces;

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using ApplicationCore.ViewModels.DataTransferObjects.Common;
 
-namespace ApplicationCore.ViewModels.DataTransferObjects.Entities
+namespace ApplicationCore.ViewModels.DataTransferObjects
 {
-    public class PostEditDto : EntityEditDto
+    public class PostAddDto : EntityAddDto
     {
         public string Subject { get; set; }
 
