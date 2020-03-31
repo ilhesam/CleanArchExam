@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ApplicationCore.Interfaces;
+using ApplicationCore.Services;
+using ApplicationCore.ViewModels.DataTransferObjects;
 using AutoMapper;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +18,8 @@ namespace Infrastructure
         {
             services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseSqlServer(configuration.GetConnectionString("BlogDbConnection")));
+
+            services.AddTransient<IPostService<PostAddDto, PostEditDto, PostGetDto>, PostService>();
 
             services.AddAutoMapper(typeof(TStartup));
 
