@@ -48,6 +48,11 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<IActionResult> DetailsForDelete(int id)
         {
+            if (!await _postService.ExistsByIdAsync(id))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
             var post = await _postService.GetByIdAsync(id);
 
             return View(post);
@@ -56,7 +61,10 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            await _postService.DeleteAsync(id);
+            if (await _postService.ExistsByIdAsync(id))
+            {
+                await _postService.DeleteAsync(id);
+            }
 
             return RedirectToAction(nameof(Index));
         }
