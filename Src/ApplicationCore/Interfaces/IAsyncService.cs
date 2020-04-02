@@ -20,5 +20,7 @@ namespace ApplicationCore.Interfaces
         Task UpdateAsync(int id, TEntityEditDto entityEditDto);
 
         Task DeleteAsync(int id);
+
+        Task<bool> ExistsByIdAsync(int id);
     }
 }

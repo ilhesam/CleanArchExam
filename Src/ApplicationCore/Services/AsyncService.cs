@@ -52,5 +52,7 @@ namespace ApplicationCore.Services
         }
 
         public virtual async Task DeleteAsync(int id) => await Repository.DeleteAsync(id);
+
+        public virtual async Task<bool> ExistsByIdAsync(int id) => await Repository.ExistsByIdAsync(id);
     }
 }

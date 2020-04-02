@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Common;
@@ -50,5 +51,10 @@ namespace Infrastructure.Repositories
             var entity = await GetByIdAsync(id);
             await DeleteAsync(entity);
         }
+
+        public virtual async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate) =>
+            await DbSet.AnyAsync(predicate);
+
+        public virtual async Task<bool> ExistsByIdAsync(int id) => await ExistsAsync(e => e.Id == id);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Common;
@@ -19,5 +20,9 @@ namespace Domain.Interfaces
         Task DeleteAsync(TEntity entity);
 
         Task DeleteAsync(int id);
+
+        Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate);
+
+        Task<bool> ExistsByIdAsync(int id);
     }
 }
