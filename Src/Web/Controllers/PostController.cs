@@ -25,5 +25,24 @@ namespace Web.Controllers
 
             return View(posts);
         }
+
+        [HttpGet]
+        public IActionResult New()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> New(PostAddDto postAddDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(postAddDto);
+            }
+
+            await _postService.AddAsync(postAddDto);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
