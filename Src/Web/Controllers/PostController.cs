@@ -44,5 +44,21 @@ namespace Web.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> DetailsForDelete(int id)
+        {
+            var post = await _postService.GetByIdAsync(id);
+
+            return View(post);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _postService.DeleteAsync(id);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
