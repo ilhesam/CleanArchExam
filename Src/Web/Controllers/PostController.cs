@@ -27,6 +27,19 @@ namespace Web.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            if (!await _postService.ExistsByIdAsync(id))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            var post = await _postService.GetByIdAsync(id);
+
+            return View(post);
+        }
+
+        [HttpGet]
         public IActionResult New()
         {
             return View();
