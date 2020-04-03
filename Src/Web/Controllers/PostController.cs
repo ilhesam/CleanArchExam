@@ -59,6 +59,35 @@ namespace Web.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (!await _postService.ExistsByIdAsync(id))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            var post = await _postService.GetEditDtoByIdAsync(id);
+
+            return View(post);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, PostEditDto postEditDto)
+        { 
+            if (!ModelState.IsValid)
+            {
+                return View(postEditDto);
+            }
+
+            if (await _postService.ExistsByIdAsync(id))
+            {
+                await _postService.UpdateAsync(id, postEditDto);
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
         public async Task<IActionResult> DetailsForDelete(int id)
         {
             if (!await _postService.ExistsByIdAsync(id))

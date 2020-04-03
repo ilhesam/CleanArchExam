@@ -35,6 +35,13 @@ namespace ApplicationCore.Services
             return Mapper.Map<TEntity, TEntityGetDto>(entity);
         }
 
+        public virtual async Task<TEntityEditDto> GetEditDtoByIdAsync(int id)
+        {
+            var entity = await Repository.GetByIdAsync(id);
+
+            return Mapper.Map<TEntity, TEntityEditDto>(entity);
+        }
+
         public virtual async Task<TEntityGetDto> AddAsync(TEntityAddDto entityAddDto)
         {
             var entity = Mapper.Map<TEntityAddDto, TEntity>(entityAddDto);

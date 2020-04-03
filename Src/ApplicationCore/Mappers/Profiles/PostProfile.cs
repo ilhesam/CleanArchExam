@@ -13,7 +13,11 @@ namespace ApplicationCore.Mappers.Profiles
         {
             CreateMap<Post, PostGetDto>();
 
+            CreateMap<Post, PostEditDto>();
+
             CreateMap<PostAddDto, Post>();
+
+            CreateMap<PostEditDto, Post>();
         }
     }
 }

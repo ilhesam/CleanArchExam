@@ -7,13 +7,15 @@ using ApplicationCore.ViewModels.DataTransferObjects.Common;
 
 namespace ApplicationCore.Interfaces
 {
-    public interface IAsyncService<in TEntityAddDto, in TEntityEditDto, TEntityGetDto> where TEntityAddDto : EntityAddDto where TEntityEditDto : EntityEditDto where TEntityGetDto : EntityGetDto
+    public interface IAsyncService<in TEntityAddDto, TEntityEditDto, TEntityGetDto> where TEntityAddDto : EntityAddDto where TEntityEditDto : EntityEditDto where TEntityGetDto : EntityGetDto
     {
         Task<List<TEntityGetDto>> ListAllAsync();
 
         IQueryable<TEntityGetDto> GetAll();
 
         Task<TEntityGetDto> GetByIdAsync(int id);
+
+        Task<TEntityEditDto> GetEditDtoByIdAsync(int id);
 
         Task<TEntityGetDto> AddAsync(TEntityAddDto entityAddDto);
 
