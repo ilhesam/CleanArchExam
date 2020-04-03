@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Domain.Entities;
+using Infrastructure.Persistence.Configurations.Author;
 using Infrastructure.Persistence.Configurations.Post;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,8 @@ namespace Infrastructure.Persistence
 
         #region Properties
 
+        public virtual DbSet<Author> Authors { get; set; }
+
         public virtual DbSet<Post> Posts { get; set; }
 
         #endregion
@@ -29,6 +32,7 @@ namespace Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder?.ApplyConfiguration<Author>(new AuthorConfiguration());
             modelBuilder?.ApplyConfiguration<Post>(new PostConfiguration());
 
             base.OnModelCreating(modelBuilder);
