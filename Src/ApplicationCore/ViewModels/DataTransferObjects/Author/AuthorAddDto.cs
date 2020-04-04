@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ApplicationCore.ViewModels.DataTransferObjects.Common;
-using Domain.Entities;
+using Domain.Common;
 
 namespace ApplicationCore.ViewModels.DataTransferObjects
 {

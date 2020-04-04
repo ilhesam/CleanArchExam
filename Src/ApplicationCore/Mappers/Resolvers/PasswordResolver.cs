@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ApplicationCore.Security;
 using AutoMapper;
-using Domain.Entities;
+using Domain.Common;
 
 namespace ApplicationCore.Mappers.Resolvers
 {
