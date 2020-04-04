@@ -5,7 +5,7 @@ using Domain.Common;
 
 namespace Domain.Entities
 {
-    public class Author : Entity
+    public class Author : Entity, IPassword
     {
         public string DisplayName { get; set; }
 

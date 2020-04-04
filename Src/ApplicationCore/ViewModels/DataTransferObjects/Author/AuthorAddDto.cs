@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using ApplicationCore.ViewModels.DataTransferObjects.Common;
+using Domain.Entities;
 
 namespace ApplicationCore.ViewModels.DataTransferObjects
 {
-    public class AuthorAddDto : EntityAddDto
+    public class AuthorAddDto : EntityAddDto, IPassword
     {
         public string DisplayName { get; set; }
 
