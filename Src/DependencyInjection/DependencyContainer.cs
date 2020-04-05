@@ -43,6 +43,7 @@ namespace DependencyInjection
             var mapperConfig = new MapperConfiguration(config =>
             {
                 config.AddProfile(new PostProfile());
+                config.AddProfile(new AuthorProfile());
             });
 
             IMapper mapper = mapperConfig.CreateMapper();
