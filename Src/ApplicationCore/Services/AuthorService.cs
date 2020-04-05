@@ -11,7 +11,7 @@ namespace ApplicationCore.Services
 {
     public class AuthorService : AsyncService<Author, AuthorAddDto, AuthorEditDto, AuthorGetDto>, IAuthorService<AuthorAddDto, AuthorEditDto, AuthorGetDto>
     {
-        public AuthorService(IAsyncRepository<Author> repository, IMapper mapper) : base(repository, mapper)
+        public AuthorService(IAuthorRepository repository, IMapper mapper) : base(repository, mapper)
         {
         }
     }
