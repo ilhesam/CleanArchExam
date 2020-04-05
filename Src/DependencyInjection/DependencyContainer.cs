@@ -28,6 +28,9 @@ namespace DependencyInjection
             services.AddTransient<IPostRepository, PostRepository>();
             services.AddTransient<IPostService<PostAddDto, PostEditDto, PostGetDto>, PostService>();
 
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IAuthorService<AuthorAddDto, AuthorEditDto, AuthorGetDto>, AuthorService>();
+
             services.AddAutoMapper();
 
             services.AddFluentValidation(builder);
