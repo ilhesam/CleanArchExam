@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using ApplicationCore.Interfaces;
 using ApplicationCore.ViewModels.DataTransferObjects;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
@@ -35,7 +38,56 @@ namespace Web.Controllers
 
             await _authorService.AddAsync(authorAddDto);
 
-            return RedirectToAction("");
+            return Redirect("/");
+        }
+
+        [HttpGet]
+        [Route("Login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login(AuthorLoginDto authorLoginDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(authorLoginDto);
+            }
+
+            if (!await _authorService.ExistsAsync(authorLoginDto))
+            {
+                ModelState.AddModelError(nameof(AuthorLoginDto.EmailAddress),"Email or password are incorrect");
+                return View(authorLoginDto);
+            }
+
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, authorLoginDto.EmailAddress),
+                new Claim(ClaimTypes.NameIdentifier, authorLoginDto.EmailAddress)
+            };
+
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+            var properties = new AuthenticationProperties
+            {
+                IsPersistent = authorLoginDto.IsPersistent
+            };
+
+            await HttpContext.SignInAsync(principal, properties);
+
+            return Redirect("/");
+        }
+
+        [HttpGet]
+        [Route("Logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return Redirect("/");
         }
     }
 }
