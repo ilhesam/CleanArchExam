@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using ApplicationCore.Interfaces;
 using ApplicationCore.ViewModels.DataTransferObjects;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class PostController : Controller
     {
         private readonly IPostService<PostAddDto, PostEditDto, PostGetDto> _postService;
