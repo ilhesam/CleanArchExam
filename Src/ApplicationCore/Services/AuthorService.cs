@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using ApplicationCore.Interfaces;
+using ApplicationCore.Security;
 using ApplicationCore.ViewModels.DataTransferObjects;
 using AutoMapper;
 using Domain.Entities;
@@ -14,5 +16,10 @@ namespace ApplicationCore.Services
         public AuthorService(IAuthorRepository repository, IMapper mapper) : base(repository, mapper)
         {
         }
+
+        public virtual async Task<bool> ExistsAsync(AuthorLoginDto authorLoginDto) =>
+            await Repository.ExistsAsync(pre =>
+                pre.EmailAddress == authorLoginDto.EmailAddress
+                && pre.Password == authorLoginDto.Password.EncodePasswordMd5());
     }
 }
