@@ -1,24 +1,27 @@
 ﻿@using Microsoft.AspNetCore.Identity
 
 
-<ul class="navbar-nav">
-    @if (User.Identity.IsAuthenticated)
-    {
+    <ul class="navbar-nav">
+        @if (User.Identity.IsAuthenticated)
+        {
 
-        <li class="nav-item">
-            <a class="nav-link text-dark">@User.Identity.Name !</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-action="Logout" asp-controller="Author">Logout</a>
-        </li>
-    }
-    else
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-action="Register" asp-controller="Author">Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-action="Login" asp-controller="Author">Login</a>
-        </li>
-    }
-</ul>
+            <li class="nav-item">
+                <a class="nav-link text-dark">@User.Identity.Name !</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="Index" asp-controller="Post">Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="Logout" asp-controller="Author">Logout</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="Register" asp-controller="Author">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-action="Login" asp-controller="Author">Login</a>
+            </li>
+        }
+    </ul>
