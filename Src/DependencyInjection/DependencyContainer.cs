@@ -59,6 +59,7 @@ namespace DependencyInjection
             services.AddTransient<IValidator<PostEditDto>, PostEditDtoValidator>();
 
             services.AddTransient<IValidator<AuthorAddDto>, AuthorAddDtoValidator>();
+            services.AddTransient<IValidator<AuthorLoginDto>, AuthorLoginDtoValidator>();
         }
     }
 }
